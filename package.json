@@ -1,0 +1,18 @@
+{
+    "name" : "ivhforg_website",
+    "description" : "Website for ivhf.org, Iris Village Heritage Foundation",
+    "version" : "1.0.0",
+    "repository" : {
+        "type" : "git",
+        "url" : "git://github.com/bander9289/ivhforg_website.git"
+    },
+    "dependencies" : {
+        "bouncy": "~3.2.2"
+    },
+    "license" : "MIT",
+    "author" : {
+        "name" : "Brandon Anderson",
+        "email" : "bander9289+github@gmail.com",
+        "url" : "https://ivhf.org"
+    }
+}
