@@ -16,6 +16,9 @@
 var fs = require('fs');
 var bouncy = require('bouncy');
 
+// start www server
+require('./www')
+
 var opts = {
     key : fs.readFileSync('/etc/ssl/private/ivhf.key'),
     cert : fs.readFileSync('/etc/ssl/private/ivhf.crt')
@@ -43,3 +46,4 @@ var server = bouncy(opts, function (req, res, bounce) {
     }
 });
 server.listen(443);
+

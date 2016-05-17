@@ -7,9 +7,15 @@
         "url" : "git://github.com/bander9289/ivhforg_website.git"
     },
     "dependencies" : {
-        "bouncy": "~3.2.2"
+        "bouncy": "~3.2.x",
+        "express": "4.x",
+        "connect": "",
+        "cookie-parser": "1.4.x",
+        "express-session": "1.13.x",
+        "jade": "1.11.x",
+        "connect-redis": "1.4.x"
     },
-    "license" : "MIT",
+    "license" : "Apache-2.0",
     "author" : {
         "name" : "Brandon Anderson",
         "email" : "bander9289+github@gmail.com",
