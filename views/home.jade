@@ -21,18 +21,20 @@ html
                 aria-expanded="false"
                 )
               span(class="sr-only") Dropdown Navigation
-              //span(class="glyphicon glyphicon-menu-hamburger" aria-hidden="true")
               span(class="caret")
-              //span(class="icon-bar")
             ul.dropdown-menu#menu(aria-labelledby="dNav")
-              li(role="presentation"): a.text-center(href="/")
-                h2 Mission
-              li(role="presentation"): a.text-center(href="/follow")
-                h2 Follow
-              li(role="presentation"): a.text-center(href="/donate")
-                h2 Donate
-              li(role="presentation"): a.text-center(href="/about")
-                h2 About
+              unless pageid == 'mission'
+                li(role="presentation"): a.text-center(href="/")
+                  h2 Mission
+              unless pageid == 'follow'
+                li(role="presentation"): a.text-center(href="/follow")
+                  h2 Follow
+              unless pageid == 'donate'
+                li(role="presentation"): a.text-center(href="/donate")
+                  h2 Donate
+              unless pageid == 'about'
+                li(role="presentation"): a.text-center(href="/about")
+                  h2 About
       .col-sm-11(class="col-xs-10")
         if pageid == 'mission'
           h2 Mission
