@@ -11,43 +11,44 @@ html
     .container
       .jumbotron
         h1 Coming Soon!
-    .row
-      .col-sm-1(class="col-xs-2")
-        .dropdown(role="navigation")
-            button#dNav(class="btn btn-default btn-lg"
-                type="button"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                )
-              span(class="sr-only") Dropdown Navigation
-              span(class="caret")
-            ul.dropdown-menu#menu(aria-labelledby="dNav")
-              unless pageid == 'mission'
-                li(role="presentation"): a.text-center(href="/")
-                  h2 Mission
-              unless pageid == 'follow'
-                li(role="presentation"): a.text-center(href="/follow")
-                  h2 Follow
-              unless pageid == 'donate'
-                li(role="presentation"): a.text-center(href="/donate")
-                  h2 Donate
-              unless pageid == 'about'
-                li(role="presentation"): a.text-center(href="/about")
-                  h2 About
-      .col-sm-11(class="col-xs-10")
-        if pageid == 'mission'
-          h2 Mission
-          p Insert mission statement here
-        else if pageid == 'follow'
-          h2 Follow
-          p Follow us on ...
-        else if pageid == 'donate'
-          h2 Donate
-          p Support us ...
-        else if pageid == 'about'
-          h2 About
-          p Current staff .... Volunteer!!
-        else
-          h2 Unknown
-          p Unknown page
+    .container-fluid
+      .row
+        .col-sm-1
+          .dropdown(role="navigation")
+              button#dNav(class="btn btn-default btn-lg"
+                  type="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  )
+                span(class="sr-only") Dropdown Navigation
+                span(class="caret")
+              ul.dropdown-menu#menu(aria-labelledby="dNav")
+                unless pageid == 'mission'
+                  a.text-center(href="/")
+                    h3 Mission
+                unless pageid == 'follow'
+                  a.text-center(href="/follow")
+                    h3 Follow
+                unless pageid == 'donate'
+                  a.text-center(href="/donate")
+                    h3 Donate
+                unless pageid == 'about'
+                  a.text-center(href="/about")
+                    h3 About
+        .col-sm-11
+          if pageid == 'mission'
+            h2 Mission
+            include ../content/mission.jade
+          else if pageid == 'follow'
+            h2 Follow
+            include ../content/follow.jade
+          else if pageid == 'donate'
+            h2 Donate
+            include ../content/donate.jade
+          else if pageid == 'about'
+            h2 About
+            include ../content/about.jade
+          else
+            h2 Unknown
+            p Unknown page
