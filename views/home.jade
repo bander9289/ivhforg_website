@@ -1,8 +1,51 @@
 html
   head
     title=title
-    link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet')
+    link(href='bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    script(type="text/javascript", src='jquery/jquery.min.js')
+    script(type="text/javascript", src='bootstrap/js/bootstrap.min.js')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no')
+    style
+      include custom.css
   body
-    div.container
-      div.jumbotron
+    .container
+      .jumbotron
         h1 Coming Soon!
+    .row
+      .col-sm-1(class="col-xs-2")
+        .dropdown(role="navigation")
+            button#dNav(class="btn btn-default btn-lg"
+                type="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                )
+              span(class="sr-only") Dropdown Navigation
+              //span(class="glyphicon glyphicon-menu-hamburger" aria-hidden="true")
+              span(class="caret")
+              //span(class="icon-bar")
+            ul.dropdown-menu#menu(aria-labelledby="dNav")
+              li(role="presentation"): a.text-center(href="/")
+                h2 Mission
+              li(role="presentation"): a.text-center(href="/follow")
+                h2 Follow
+              li(role="presentation"): a.text-center(href="/donate")
+                h2 Donate
+              li(role="presentation"): a.text-center(href="/about")
+                h2 About
+      .col-sm-11(class="col-xs-10")
+        if pageid == 'mission'
+          h2 Mission
+          p Insert mission statement here
+        else if pageid == 'follow'
+          h2 Follow
+          p Follow us on ...
+        else if pageid == 'donate'
+          h2 Donate
+          p Support us ...
+        else if pageid == 'about'
+          h2 About
+          p Current staff .... Volunteer!!
+        else
+          h2 Unknown
+          p Unknown page

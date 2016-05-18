@@ -25,7 +25,9 @@ app.use(session({
 app.set('views', './views');
 app.set('view engine', 'jade');
 
-app.get('/', function(req, res, next) {
+app.use(express.static('static'));
+
+var render_page = function(req, res, pageid) {
 	if (req.session.views) {
 		req.session.views++
 		console.log("user has connected " + req.session.views + " times")
@@ -33,7 +35,23 @@ app.get('/', function(req, res, next) {
 		req.session.views = 1
 	}
 
-	res.render('home', { title : 'Iris Village Heritage Foundation' })
+	res.render('home', { title : 'Iris Village Heritage Foundation', pageid : pageid })
+}
+
+app.get('/', function(req, res, next) {
+	render_page(req, res, 'mission')
+})
+
+app.get('/follow', function(req, res, next) {
+	render_page(req, res, 'follow')
+})
+
+app.get('/donate', function(req, res, next) {
+	render_page(req, res, 'donate')
+})
+
+app.get('/about', function(req, res, next) {
+	render_page(req, res, 'about')
 })
 
 app.listen(8000);
