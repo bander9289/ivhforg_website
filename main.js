@@ -16,9 +16,6 @@
 var fs = require('fs');
 var bouncy = require('bouncy');
 
-// start www server
-require('./www')
-
 var opts = {
     key : fs.readFileSync('/etc/ssl/private/ivhf.key'),
     cert : fs.readFileSync('/etc/ssl/private/ivhf.crt')
