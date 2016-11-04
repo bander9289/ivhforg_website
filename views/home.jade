@@ -8,9 +8,8 @@ html
     style
       include custom.css
   body
-    .container
-      .jumbotron
-        h1 Coming Soon!
+    .horzscroll
+        img(src="images/ivhf_org_front2_vert.jpg", alt="Bank of Chillicothe building, old & new")
     .container-fluid
       .row
         .col-sm-1
@@ -33,22 +32,17 @@ html
                 unless pageid == 'donate'
                   a.text-center(href="/donate")
                     h3 Donate
-                unless pageid == 'about'
-                  a.text-center(href="/about")
-                    h3 About
-        .col-sm-11
+        .col-sm-5
           if pageid == 'mission'
             h2 Mission
             include ../content/mission.jade
           else if pageid == 'follow'
-            h2 Follow
+            h2 Follow/Contact
             include ../content/follow.jade
           else if pageid == 'donate'
             h2 Donate
             include ../content/donate.jade
-          else if pageid == 'about'
-            h2 About
-            include ../content/about.jade
           else
             h2 Unknown
             p Unknown page
+        .col-sm-6

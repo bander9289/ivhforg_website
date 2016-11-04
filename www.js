@@ -50,8 +50,4 @@ app.get('/donate', function(req, res, next) {
 	render_page(req, res, 'donate')
 })
 
-app.get('/about', function(req, res, next) {
-	render_page(req, res, 'about')
-})
-
 app.listen(8000);
