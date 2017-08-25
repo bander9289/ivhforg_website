@@ -17,8 +17,8 @@ var fs = require('fs');
 var bouncy = require('bouncy');
 
 var opts = {
-    key : fs.readFileSync('/etc/ssl/private/ivhf.key'),
-    cert : fs.readFileSync('/etc/ssl/private/ivhf.crt')
+    key : fs.readFileSync('/etc/letsencrypt/live/ivhf.org/privkey.pem'),
+    cert : fs.readFileSync('/etc/letsencrypt/live/ivhf.org/fullchain.pem')
     // use SNI for different cert per host (blog vs. www)
     // https://github.com/substack/bouncy/blob/master/example/http-https-sni.js
 };
