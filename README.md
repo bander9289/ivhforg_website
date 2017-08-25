@@ -12,3 +12,8 @@ sudo node main.js
 Install Ghost to /var/www/ghost and run through npm
 
 http://support.ghost.org/installing-ghost-linux/#install-ghost
+
+# SSL Certificate
+1) Temporarily run 'sudo python -m SimpleHTTPServer 80' in /home/banders/tmp
+2) 'sudo certbot renew' renews *all* certificates
+3) Kill SimpleHTTPServer as it was only used for control verification
